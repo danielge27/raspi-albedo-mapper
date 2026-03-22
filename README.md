@@ -1,4 +1,4 @@
-# 🛰️ Raspberry Pi Albedo Mapper
+#  Raspberry Pi Albedo Mapper
 ### *Team Cubeagle — Ground-Based Urban Heat Risk Analysis*
 
 > A **Raspberry Pi 4B + Pi Camera** tool that photographs neighborhoods from ground level, detects urban surface types, calculates albedo (surface reflectivity), and generates city planning heat risk reports — all running locally on a $50 computer.
@@ -10,7 +10,7 @@
 
 ---
 
-## 🌐 Web Version
+##  Web Version
 
 Looking for the browser-based version? → **[albedo-mapper.onrender.com](https://albedo-mapper.onrender.com)**
 
@@ -18,7 +18,7 @@ This repo is the **Raspberry Pi local version** — runs entirely offline, no in
 
 ---
 
-## 📸 Demo
+##  Demo
 
 ### GUI — Live Camera View
 
@@ -44,7 +44,7 @@ The tool generates a complete one-page report with contour map, coverage chart, 
 
 ---
 
-## 🔧 Hardware Requirements
+##  Hardware Requirements
 
 | Component | Specification | Approximate Cost |
 |---|---|---|
@@ -58,31 +58,31 @@ The tool generates a complete one-page report with contour map, coverage chart, 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 raspi-albedo-mapper/
 │
-├── capture.py              # 📷 Pi Camera capture script
-├── run_audit.py            # 🖥️  CLI — batch process photos
-├── run_audit_v4.py         # 🖼️  GUI — live camera + one-click analysis
-├── surface_detector.py     # 🔍 HSV surface classification engine
-├── albedo_calculator.py    # 📐 Albedo score + heat index formulas
-├── report_generator.py     # 📊 Generates visual PNG reports
+├── capture.py              #  Pi Camera capture script
+├── run_audit.py            #   CLI — batch process photos
+├── run_audit_v4.py         #   GUI — live camera + one-click analysis
+├── surface_detector.py     #  HSV surface classification engine
+├── albedo_calculator.py    #  Albedo score + heat index formulas
+├── report_generator.py     #  Generates visual PNG reports
 │
-├── photos/                 # 🗂️  Input photos go here
+├── photos/                 #   Input photos go here
 │   ├── roxbury.jpg
 │   ├── seaport.jpg
 │   ├── jamaica_plain.jpg
 │   └── norwood.jpg
 │
-├── outputs/                # 📋 Generated reports saved here
+├── outputs/                #  Generated reports saved here
 │   ├── boston_report.png
 │   ├── cambridge_report.png
 │   ├── logan_airport_report.png
 │   └── gillette_stadium_report.png
 │
-└── screenshots/            # 🖼️  Demo screenshots
+└── screenshots/            #   Demo screenshots
     ├── demo1.png
     ├── demo2.png
     └── demo3.png
@@ -90,7 +90,7 @@ raspi-albedo-mapper/
 
 ---
 
-## ⚙️ Raspberry Pi Setup — Step by Step
+##  Raspberry Pi Setup — Step by Step
 
 ### Step 1 — Flash Raspberry Pi OS
 
@@ -223,7 +223,7 @@ mkdir -p photos outputs
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 There are **two ways** to run the mapper:
 
@@ -241,13 +241,13 @@ python3 run_audit_v4.py
 **Workflow:**
 1. Live camera stream appears automatically
 2. Point camera at your target neighborhood
-3. Press **📸 CAPTURE** to freeze and save the photo
-4. Press **🔬 CALCULATE** to run the full analysis
+3. Press ** CAPTURE** to freeze and save the photo
+4. Press ** CALCULATE** to run the full analysis
 5. Report saves to `outputs/` and opens automatically
 
 ---
 
-### Option B — CLI Mode (Batch Processing) 🖥️
+### Option B — CLI Mode (Batch Processing) 
 
 Use this to process multiple pre-saved photos at once.
 
@@ -258,12 +258,12 @@ python3 capture.py "Roxbury Boston"
 
 Expected output:
 ```
-🛰️  Boston Albedo Mapper — Pi 4 Camera Capture
+  Boston Albedo Mapper — Pi 4 Camera Capture
    Location: Roxbury Boston
 ────────────────────────────────────────────────
 Show live preview to aim camera? (y/n): y
-📹 Live preview for 5 seconds...
-📷 Initializing Pi Camera...
+ Live preview for 5 seconds...
+ Initializing Pi Camera...
    Warming up (3 seconds)...
    Capturing image...
 ✅ Photo saved!
@@ -287,23 +287,23 @@ python3 run_audit.py
 
 Expected output:
 ```
-🔍 Analyzing: Roxbury — Boston
+   Analyzing: Roxbury — Boston
    Image: photos/roxbury.jpg
 
-📊 Surface Coverage:
+  Surface Coverage:
    Concrete / Sidewalk       32.9%  ████████████████
    Trees / Vegetation        22.5%  ███████████
    Bright / White Roof       10.7%  █████
    Asphalt / Road             7.3%  ███
    Dark Tar Roof              4.7%  ██
 
-📄 Generating report...
+  Generating report...
 ✅ Done! Report: outputs/roxbury_boston_report.png
 ```
 
 ---
 
-### Option C — Use Google Earth Photos (No Pi Camera Needed) 🌍
+### Option C — Use Google Earth Photos (No Pi Camera Needed) 
 
 You can analyze any aerial image without a Pi Camera:
 
@@ -315,10 +315,10 @@ You can analyze any aerial image without a Pi Camera:
 
 ---
 
-## 🔬 How the Analysis Works
+##  How the Analysis Works
 
 ```
-📷 Photo captured (Pi Camera or Google Earth)
+Photo captured (Pi Camera or Google Earth)
         ↓
 surface_detector.py
   → Convert image to HSV color space
@@ -354,7 +354,7 @@ report_generator.py
 
 ---
 
-## 📂 View Your Reports
+##  View Your Reports
 
 **On the Pi desktop:**
 ```bash
@@ -380,7 +380,7 @@ scp pi@PI_IP_ADDRESS:~/raspi-albedo-mapper/outputs/*.png C:\Users\YOUR_NAME\Desk
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 | Problem | Solution |
 |---|---|
@@ -395,21 +395,21 @@ scp pi@PI_IP_ADDRESS:~/raspi-albedo-mapper/outputs/*.png C:\Users\YOUR_NAME\Desk
 
 ---
 
-## 📊 Research Applications
+##  Research Applications
 
 This tool was built to support real environmental science research:
 
-- **🏘️ Environmental Justice** — Do lower-income neighborhoods absorb more heat?
-- **📅 Temporal Change** — How has Boston lost green coverage over 20 years?
-- **🌿 Green Roof ROI** — How many green roofs would cool a neighborhood by 1°F?
-- **🛰️ Satellite Validation** — How accurate is NASA MODIS data vs. ground truth?
+- ** Environmental Justice** — Do lower-income neighborhoods absorb more heat?
+- ** Temporal Change** — How has Boston lost green coverage over 20 years?
+- ** Green Roof ROI** — How many green roofs would cool a neighborhood by 1°F?
+- ** Satellite Validation** — How accurate is NASA MODIS data vs. ground truth?
 
 **Neighborhoods studied so far:**
 Roxbury · Seaport District · Jamaica Plain · Norwood · Cambridge · Logan Airport · Gillette Stadium
 
 ---
 
-## 🏫 About Team Cubeagle
+## About Team Cubeagle
 
 Built by **Team Cubeagle**, high school students from the Boston area (SHS Class of 2026), as part of the **MIT BWSI CubeSat program**. This ground-based tool extends our original CubeSat orbital albedo mission concept to street-level neighborhood analysis.
 
@@ -417,7 +417,7 @@ Built by **Team Cubeagle**, high school students from the Boston area (SHS Class
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — free to use, modify, and share with attribution.
 
@@ -425,7 +425,7 @@ MIT License — free to use, modify, and share with attribution.
 
 <div align="center">
 
-**Built with 🛰️ by Team Cubeagle · SHS · Boston, MA · 2026**
+**Built with by Team Cubeagle · SHS · Boston, MA · 2026**
 
 [Web Version](https://albedo-mapper.onrender.com) · [Web Repo](https://github.com/danielge27/albedo-mapper) · [Report an Issue](https://github.com/danielge27/raspi-albedo-mapper/issues)
 
